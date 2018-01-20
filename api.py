@@ -12,13 +12,13 @@ def hello():
 @app.route("/turnOnAll")
 def turnAllLightOn():
 	for x in range(len(outputPin)):
-		GPIO.output(output[x]. GPIO.HIGH)
+		GPIO.output(outputPin[x]. GPIO.HIGH)
 	return "nyala"
 
 @app.route("/turnOffAll")
 def turnAllLightOff():
 	for x in range(len(outputPin)):
-		GPIO.output(output[x]. GPIO.LOW)
+		GPIO.output(outputPin[x]. GPIO.LOW)
 	return "mati"
 
 GPIO.setwarnings(False)
