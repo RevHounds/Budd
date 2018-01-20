@@ -30,6 +30,3 @@ for x in range(len(outputPin)):
 
 if __name__ == '__main__':
 	app.run(debug=True)
-
-url_for('static', filename='style/style.css')
-url_for('static', filename='style/botstrap.css')
