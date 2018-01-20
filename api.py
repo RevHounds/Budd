@@ -3,9 +3,6 @@ import RPi.GPIO as GPIO
 
 app = Flask(__name__)
 
-url_for('static', filename='style/style.css')
-url_for('static', filename='style/botstrap.css')
-
 outputPin = [17, 18, 14, 4]
 
 @app.route("/")
@@ -33,3 +30,6 @@ for x in range(len(outputPin)):
 
 if __name__ == '__main__':
 	app.run(debug=True)
+
+url_for('static', filename='style/style.css')
+url_for('static', filename='style/botstrap.css')
