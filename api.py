@@ -1,4 +1,4 @@
-from flask import flask
+from flask import flask, render_template
 import RPi.GPIO as GPIO
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ outputPin = [17, 18, 14, 4]
 
 @app.route("/")
 def hello():
-	return "Welcome home!"
+	return render_template('index.html')
 
 @app.route("/turnOnAll")
 def turnAllLightOn():
