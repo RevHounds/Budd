@@ -3,6 +3,9 @@ import RPi.GPIO as GPIO
 
 app = Flask(__name__)
 
+url_for('static', filename='style/style.css')
+url_for('static', filename='style/botstrap.css')
+
 outputPin = [17, 18, 14, 4]
 
 @app.route("/")
@@ -13,13 +16,13 @@ def hello():
 def turnAllLightOn():
 	for x in range(len(outputPin)):
 		GPIO.output(outputPin[x], GPIO.HIGH)
-	return "nyala"
+	return render_template('index.html')
 
 @app.route("/turnOffAll")
 def turnAllLightOff():
 	for x in range(len(outputPin)):
 		GPIO.output(outputPin[x], GPIO.LOW)
-	return "mati"
+	return render_template('index.html')
 
 GPIO.setwarnings(False)
 
