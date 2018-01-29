@@ -22,7 +22,7 @@ def turnAllLightOff():
 @app.route("/getdata")
 def getdata():
 	pin = []
-	for x in range(len(outputPin))
+	for x in range(len(outputPin)):
 		if GPIO.input(outputPin[x]) == GPIO.HIGH : 
 			pin.append(x)
 	return json.dumps(pin)
