@@ -7,6 +7,10 @@ outputPin = [17, 18, 14, 4]
 inputPin = [20,21]
 
 
+@app.route("/")
+def turnAllLightOn():
+	return render_template('index.html')
+
 @app.route("/turnOnAll")
 def turnAllLightOn():
 	for x in range(len(outputPin)):

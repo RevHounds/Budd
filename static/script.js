@@ -1,5 +1,9 @@
+var button = [];
+
 $(document).ready(function(){
+	buttons = $('.btn');
 	$.get("/getdata", function(data) {
-	    console.log($.parseJSON(data))
+		ledData = $.parseJSON(data);
+	    console.log(ledData);
 	});
-})
+});
