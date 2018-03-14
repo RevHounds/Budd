@@ -8,6 +8,7 @@ inputPin = outputPin
 
 @app.route("/toggle/<pin>")
 def toggle(pin):
+	pin = int(pin)
 	if GPIO.input(outputPin[pin]) == GPIO.HIGH:
 		GPIO.output(outputPin[pin], GPIO.LOW)
 	else:
