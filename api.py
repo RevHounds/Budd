@@ -6,11 +6,11 @@ app = Flask(__name__)
 outputPin = [17, 18, 14, 4]
 inputPin = outputPin
 
-@app.route("toggle/<pin>")
+@app.route("/toggle/<pin>")
 def toggle(pin):
 	if GPIO.input(outputPin[pin]) == GPIO.HIGH:
 		GPIO.output(outputPin[pin], GPIO.LOW)
-	else 
+	else:
 		GPIO.output(outputPin[pin], GPIO.HIGH)
 	return 'ok'
 
