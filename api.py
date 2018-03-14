@@ -4,12 +4,7 @@ import RPi.GPIO as GPIO
 app = Flask(__name__)
 
 outputPin = [17, 18, 14, 4]
-inputPin = [17, 18, 14, 4]
-
-
-@app.route("/")
-def turnAllLightOn():
-	return render_template('index.html')
+inputPin = outputPin
 
 @app.route("toggle/<pin>")
 def toggle(pin):
@@ -47,6 +42,7 @@ for x in range(len(outputPin)):
 	GPIO.setup(outputPin[x], GPIO.OUT)
 
 if __name__ == '__main__':
+	turnAllLightOn()
 	app.run(debug=True)
 
 
